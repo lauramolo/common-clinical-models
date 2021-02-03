@@ -128,7 +128,7 @@
           "$gt0066|Fast-track Index Score|<=11"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0078": {
@@ -138,77 +138,77 @@
           "$gt0066|Fast-track Index Score|>=12"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0083|Patienten uppfyller utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0083|Paciente elegible para ser dado de alta|"
         ]
       },
       "gt0079": {
         "id": "gt0079",
         "priority": 7,
         "when": [
-          "$gt0023|Level of consciousness|==0|local::at0034|Kontaktbar bara vid taktkänsla stimulering|"
+          "$gt0023|Level of consciousness|==0|local::at0034|Alertable únicamente con estimulación táctil|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0081": {
         "id": "gt0081",
         "priority": 6,
         "when": [
-          "$gt0024|Physical activity|==0|local::at0036|Kan INTE mobilisera extremiteter|"
+          "$gt0024|Physical activity|==0|local::at0036|Incapaz de mover voluntariamente las extremidades|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0082": {
         "id": "gt0082",
         "priority": 5,
         "when": [
-          "$gt0025|Hemodynamic stability|==0|local::at0043|Blodtryck ± 50% från bas blodtrycket|"
+          "$gt0025|Hemodynamic stability|==0|local::at0043|Presión arterial ± 50% de la presión arterial media inicial|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0083": {
         "id": "gt0083",
         "priority": 4,
         "when": [
-          "$gt0026|Respiratory stability|==0|local::at0048|Dyspneik med svag hosta|"
+          "$gt0026|Respiratory stability|==0|local::at0048|Disnea con tos débil|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0084": {
         "id": "gt0084",
         "priority": 3,
         "when": [
-          "$gt0027|Oxygen saturation status|==0|local::at0050|SpO2 <90% med O2 tilläggoxygen(en)|"
+          "$gt0027|Oxygen saturation status|==0|local::at0050|Mantiene un valor mayor a 90 % con el aire de la sala|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0085": {
         "id": "gt0085",
         "priority": 2,
         "when": [
-          "$gt0028|Postoperative pain assessment|==0|local::at0054|Ihållande måttlig till svår smärta|"
+          "$gt0028|Postoperative pain assessment|==0|local::at0054|Dolor severo persistente|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       },
       "gt0086": {
         "id": "gt0086",
         "priority": 1,
         "when": [
-          "$gt0029|Postoperative emetic symptoms|==0|local::at0058|Ihållande måttlig till svår illamående eller kräkningar|"
+          "$gt0029|Postoperative emetic symptoms|==0|local::at0058|Náuseas y vómitos persistentes moderado a severo|"
         ],
         "then": [
-          "$gt0076|Score Interpretation: |=local::at0084|Patienten uppfyller INTE utskrivningskriterier|"
+          "$gt0076|Score Interpretation: |=local::at0084|Paciente NO elegible para ser dado de alta|"
         ]
       }
     }
@@ -257,6 +257,10 @@
             "id": "gt0029",
             "text": "Postoperative emetic symptoms",
             "description": "*"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "openEHR-EHR-EVALUATION.fasttrackscale.v0"
           },
           "gt0059": {
             "id": "gt0059",
@@ -353,7 +357,7 @@
         "terms": {
           "gt0001": {
             "id": "gt0001",
-            "text": "",
+            "text": "Laura Moral Lopez",
             "description": "Criterios de Fast-Track después de la realización de una cirugía ambulatoria"
           },
           "gt0023": {
@@ -391,6 +395,11 @@
             "text": "Síntomas eméticos postoperatorios",
             "description": ""
           },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "openEHR-EHR-EVALUATION.fasttrackscale.v0",
+            "description": ""
+          },
           "gt0059": {
             "id": "gt0059",
             "text": "openEHR-EHR-EVALUATION.fast_tracking_outpatients_after_ambulatory_surgery.v0",
@@ -404,47 +413,47 @@
           "gt0061": {
             "id": "gt0061",
             "text": "magnitud",
-            "description": ""
+            "description": " /data[at0001]/items[at0061]"
           },
           "gt0063": {
             "id": "gt0063",
-            "text": "Calcular puntuación total",
+            "text": "Calculo puntuación total",
             "description": ""
           },
           "gt0066": {
             "id": "gt0066",
-            "text": "Fast track escala de valoración",
-            "description": ""
+            "text": "Fast-track escala de puntuación",
+            "description": "*"
           },
           "gt0069": {
             "id": "gt0069",
-            "text": "Valoración total",
-            "description": ""
+            "text": "resumen de los valores",
+            "description": "resumen de los valores"
           },
           "gt0070": {
             "id": "gt0070",
             "text": "valor detallado",
-            "description": ""
+            "description": "valor detallado"
           },
           "gt0071": {
             "id": "gt0071",
             "text": "critico",
-            "description": ""
+            "description": "critico"
           },
           "gt0072": {
             "id": "gt0072",
-            "text": "advertencia",
-            "description": ""
+            "text": "aviso",
+            "description": "aviso"
           },
           "gt0073": {
             "id": "gt0073",
             "text": "información",
-            "description": ""
+            "description": "información"
           },
           "gt0076": {
             "id": "gt0076",
             "text": "Interpretación de los resultados",
-            "description": ""
+            "description": "*"
           },
           "gt0077": {
             "id": "gt0077",
@@ -468,7 +477,7 @@
           },
           "gt0082": {
             "id": "gt0082",
-            "text": "Estabilidad hemodinámico ≠ 0",
+            "text": "Estabilidad hemodinámica ≠ 0",
             "description": ""
           },
           "gt0083": {
@@ -483,7 +492,7 @@
           },
           "gt0085": {
             "id": "gt0085",
-            "text": "Dolor posoperatorio ≠ 0",
+            "text": "Dolor postoperatorio≠ 0",
             "description": ""
           },
           "gt0086": {
@@ -498,7 +507,7 @@
         "terms": {
           "gt0001": {
             "id": "gt0001",
-            "text": "",
+            "text": "Laura Moral Lopez",
             "description": "En app som vårdpersonal kan använda för att bestämma om patienten fyller utskrivningskriterier efter ett dagkirurgisk ingrepp. "
           },
           "gt0023": {
@@ -536,6 +545,11 @@
             "text": "Illamående och kräkningar",
             "description": ""
           },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "openEHR-EHR-EVALUATION.fasttrackscale.v0",
+            "description": ""
+          },
           "gt0059": {
             "id": "gt0059",
             "text": "openEHR-EHR-EVALUATION.fast_tracking_outpatients_after_ambulatory_surgery.v0",
@@ -549,7 +563,7 @@
           "gt0061": {
             "id": "gt0061",
             "text": "magnitud",
-            "description": ""
+            "description": "*(en) /data[at0001]/items[at0061]"
           },
           "gt0063": {
             "id": "gt0063",
@@ -559,41 +573,41 @@
           "gt0066": {
             "id": "gt0066",
             "text": "Fast-track Checklista",
-            "description": ""
+            "description": "*"
           },
           "gt0069": {
             "id": "gt0069",
-            "text": "Sammanfattningsvärde",
-            "description": ""
+            "text": "sammanfattningsvärde",
+            "description": "sammanfattningsvärde"
           },
           "gt0070": {
             "id": "gt0070",
             "text": "detaljvärde",
-            "description": ""
+            "description": "detaljvärde"
           },
           "gt0071": {
             "id": "gt0071",
-            "text": "kritisk",
-            "description": ""
+            "text": "kristisk",
+            "description": "kritisk"
           },
           "gt0072": {
             "id": "gt0072",
             "text": "varning",
-            "description": ""
+            "description": "varning"
           },
           "gt0073": {
             "id": "gt0073",
-            "text": "informationen",
-            "description": ""
+            "text": "information",
+            "description": "information"
           },
           "gt0076": {
             "id": "gt0076",
             "text": "Utvärdering av resultat:",
-            "description": ""
+            "description": "*"
           },
           "gt0077": {
             "id": "gt0077",
-            "text": "Patienten uppfyller Inte ustkrivningskriterier",
+            "text": "Patienten uppfyller INTE utskrivningskriterier",
             "description": ""
           },
           "gt0078": {
