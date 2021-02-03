@@ -1,0 +1,129 @@
+guidelines:
+  1: Fast_Tracking_Scala_For_Ambulatory_Surgery.v0
+test_cases:
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Awake and Oriented|
+      gt0024|Physical activity: 2|local::at0038|Able to move all extremities on command|
+      gt0025|Hemodynamic stability: 2|local::at0040|Blood pressure ± 15% of baseline|
+      gt0026|Respiratory stability: 2|local::at0045|Respiratory rate 10 to 20 breaths/min, able to breathe deeply|
+      gt0027|Oxygen saturation status: 2|local::at0052|maintains value >90% while breathing room air|
+      gt0028|Postoperative pain assessment: 2|local::at0056|No or mild discomfort|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|No or mild nausea with no active vomiting|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 14
+      'gt0076|Score Interpretation: ': local::at0083|Patient is elegible to be discharged|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Awake and Oriented|
+      gt0024|Physical activity: 2|local::at0038|Able to move all extremities on command|
+      gt0025|Hemodynamic stability: 0|local::at0043|Blood pressure ± 50% of baseline|
+      gt0026|Respiratory stability: 2|local::at0045|Respiratory rate 10 to 20 breaths/min, able to breathe deeply|
+      gt0027|Oxygen saturation status: 2|local::at0052|maintains value >90% while breathing room air|
+      gt0028|Postoperative pain assessment: 2|local::at0056|No or mild discomfort|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|No or mild nausea with no active vomiting|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 12
+      'gt0076|Score Interpretation: ': local::at0084|Patient is not elegible to be discharged|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 1|local::at0033|Arousable with minimal stimulation|
+      gt0024|Physical activity: 1|local::at0037|Some weakness in movement of extremities|
+      gt0025|Hemodynamic stability: 1|local::at0041|Blood pressure ± 30 % of baseline|
+      gt0026|Respiratory stability: 1|local::at0046|Tachypnea with good cough|
+      gt0027|Oxygen saturation status: 1|local::at0051|requires supplemental oxygen to maintain saturation|
+      gt0028|Postoperative pain assessment: 1|local::at0055|Moderate-to-severe pain controlled with intravenous analgesics|
+      gt0029|Postoperative emetic symptoms: 1|local::at0059|Transient vomiting or retching controlled with intravenous antiemetics|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 7
+      'gt0076|Score Interpretation: ': local::at0084|Patient is not elegible to be discharged|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Consciente y orientado|
+      gt0024|Physical activity: 2|local::at0038|Capacidad para movilizar todas las extremidades a la orden|
+      gt0025|Hemodynamic stability: 2|local::at0040|Presión arterial  ± 15% de la presión arterial media inicial|
+      gt0026|Respiratory stability: 2|local::at0045|Frecuencia respiratoria de 10 a 20 resp/min, capacidad de respirar profundo|
+      gt0027|Oxygen saturation status: 2|local::at0052|Saturación menor del 90 % con oxígeno suplementario|
+      gt0028|Postoperative pain assessment: 2|local::at0056|Ningun o mínimo dolor|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|Ninguno o náuseas leves sin vómito|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 14
+      'gt0076|Score Interpretation: ': local::at0083|Paciente elegible para ser dado de alta|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Consciente y orientado|
+      gt0024|Physical activity: 2|local::at0038|Capacidad para movilizar todas las extremidades a la orden|
+      gt0025|Hemodynamic stability: 2|local::at0040|Presión arterial  ± 15% de la presión arterial media inicial|
+      gt0026|Respiratory stability: 2|local::at0045|Frecuencia respiratoria de 10 a 20 resp/min, capacidad de respirar profundo|
+      gt0027|Oxygen saturation status: 2|local::at0052|Saturación menor del 90 % con oxígeno suplementario|
+      gt0028|Postoperative pain assessment: 0|local::at0054|Dolor severo persistente|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|Ninguno o náuseas leves sin vómito|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 12
+      'gt0076|Score Interpretation: ': local::at0084|Paciente NO elegible para ser dado de alta|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 0|local::at0034|Kontaktbar bara vid taktkänsla stimulering|
+      gt0024|Physical activity: 0|local::at0036|Kan INTE mobilisera extremiteter|
+      gt0025|Hemodynamic stability: 0|local::at0043|Blodtryck ± 50% från bas blodtrycket|
+      gt0026|Respiratory stability: 0|local::at0048|Dyspneik med svag hosta|
+      gt0027|Oxygen saturation status: 0|local::at0050|SpO2 <90% med O2 tilläggoxygen(en)|
+      gt0028|Postoperative pain assessment: 0|local::at0054|Ihållande måttlig till svår smärta|
+      gt0029|Postoperative emetic symptoms: 0|local::at0058|Ihållande måttlig till svår illamående eller kräkningar|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 0
+      'gt0076|Score Interpretation: ': local::at0084|Patienten uppfyller INTE utskrivningskriterier|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 1|local::at0033|Kontaktbar vid lätt eller verbal stimulering|
+      gt0024|Physical activity: 1|local::at0037|Lite svårt att mobilisera extremiteter|
+      gt0025|Hemodynamic stability: 1|local::at0041|Blodtryck ± 30 % från bas blodtrycket|
+      gt0026|Respiratory stability: 1|local::at0046|Takypne med god hosta|
+      gt0027|Oxygen saturation status: 1|local::at0051|Behöver O2 tillägg for att behålla SpO2|
+      gt0028|Postoperative pain assessment: 1|local::at0055|Måttlig till svår smärta som kontroleras med intravenösa smärtstillande|
+      gt0029|Postoperative emetic symptoms: 1|local::at0059|Övergående illamående eller kräkningar som kontroleras med intravenosa antiemetika|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 7
+      'gt0076|Score Interpretation: ': local::at0084|Patienten uppfyller INTE utskrivningskriterier|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Fullt vaken|
+      gt0024|Physical activity: 2|local::at0038|Fri mobilisering av alla extremiteter|
+      gt0025|Hemodynamic stability: 2|local::at0040|Blodtryck ± 15% från bas blodtrycket|
+      gt0026|Respiratory stability: 2|local::at0045|Andninsfrekvens 10-20 / min och kan ta någon djup andetag|
+      gt0027|Oxygen saturation status: 2|local::at0052|SpO2 >90% med luftanding|
+      gt0028|Postoperative pain assessment: 2|local::at0056|Ingen smärta eller obehag|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|Inget illamående eller kräkningar|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 14
+      'gt0076|Score Interpretation: ': local::at0083|Patienten uppfyller utskrivningskriterier|
+- id: case_1
+  input:
+    1:
+      gt0023|Level of consciousness: 2|local::at0032|Fullt vaken|
+      gt0024|Physical activity: 2|local::at0038|Fri mobilisering av alla extremiteter|
+      gt0025|Hemodynamic stability: 0|local::at0043|Blodtryck ± 50% från bas blodtrycket|
+      gt0026|Respiratory stability: 2|local::at0045|Andninsfrekvens 10-20 / min och kan ta någon djup andetag|
+      gt0027|Oxygen saturation status: 2|local::at0052|SpO2 >90% med luftanding|
+      gt0028|Postoperative pain assessment: 2|local::at0056|Ingen smärta eller obehag|
+      gt0029|Postoperative emetic symptoms: 2|local::at0060|Inget illamående eller kräkningar|
+  expected_output:
+    1:
+      gt0066|Fast-track Index Score: 12
+      'gt0076|Score Interpretation: ': local::at0084|Patienten uppfyller INTE utskrivningskriterier|
